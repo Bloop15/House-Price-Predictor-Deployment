@@ -8,6 +8,13 @@ import time
 import warnings
 warnings.filterwarnings('ignore')
 
+# Streamlit App Layout
+st.set_page_config(
+    page_title="🏡 Ames House Price Predictor",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
 # Load Deployment Artifacts
 @st.cache_resource
 def load_artifacts():
@@ -69,13 +76,6 @@ def predict_price(processed_data):
 
     return final_price
 
-
-# Streamlit App Layout
-st.set_page_config(
-    page_title="🏡 Ames House Price Predictor",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 
 # Custom CSS 
 st.markdown("""
