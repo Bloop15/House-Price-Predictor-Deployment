@@ -1,4 +1,4 @@
-# Ames House Price Predictor – Deployment
+# Ames Housing Price Predictor – Deployment
 
 This repository hosts the **Streamlit web application** for the **Ames Housing Price Prediction** project — a machine learning app that predicts house prices based on key property features.
 
