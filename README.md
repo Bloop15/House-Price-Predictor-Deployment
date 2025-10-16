@@ -2,7 +2,7 @@
 
 This repository hosts the **Streamlit web application** for the **Ames Housing Price Prediction** project — a machine learning app that predicts house prices based on key property features.
 
-**Live App:** [https://house-price-predictor-sdia.onrender.com/](https://house-price-predictor-sdia.onrender.com/)
+**Live App:** [https://house-price-predictor-sdia.onrender.com/](https://house-price-predictor-sdia.onrender.com)
 
 ---
 
