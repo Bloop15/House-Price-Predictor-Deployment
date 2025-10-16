@@ -300,8 +300,8 @@ for feature, (label, default, min_val, max_val, widget) in top_10_dict.items():
 
 # Buttons
 col1, col2= st.columns([1, 1], gap="medium")
-predict_clicked= col1.button("🚀 Predict House Price", width='stretch', type="primary")
-col2.button("🔄 Reset to Defaults", width='stretch', on_click=reset_inputs)
+predict_clicked= col1.button("🚀 Predict House Price", use_container_width=True, type="primary")
+col2.button("🔄 Reset to Defaults", use_container_width=True, on_click=reset_inputs)
 
 # Show reset spinner if flag is set
 if st.session_state.get("show_reset_spinner", False):
@@ -368,7 +368,7 @@ if st.session_state.last_inputs:
     df_display= df_display.reset_index()
     
     with st.expander("📋 View Input Details", expanded=False):
-        st.dataframe(df_display, width='stretch', hide_index=True)
+        st.dataframe(df_display, use_container_width=True, hide_index=True)
 
 
 # Batch CSV Upload
@@ -413,9 +413,9 @@ if uploaded_file:
         }, inplace=True)
 
         with st.expander("📊 Preview Uploaded Data", expanded=True):
-            st.dataframe(input_review.head(10), width='stretch')
+            st.dataframe(input_review.head(10), use_container_width=True)
 
-        if st.button("🚀 Generate Predictions for All Properties", width='stretch', type="primary"):
+        if st.button("🚀 Generate Predictions for All Properties", use_container_width=True, type="primary"):
             with st.spinner("🔄 Processing batch predictions..."):
                 processed_csv= apply_preprocessing(input_csv, ordinal_mappings, FULL_FEATURE_LIST, scaler)
                 predictions= predict_price(processed_csv)
@@ -440,7 +440,7 @@ if uploaded_file:
 
             
             with st.expander("📈 Preview Results", expanded=True):
-                st.dataframe(results_preview.head(10), width='stretch')
+                st.dataframe(results_preview.head(10), use_container_width=True)
 
             csv_data= input_csv.to_csv(index=False).encode("utf-8")
             st.download_button(
@@ -448,7 +448,7 @@ if uploaded_file:
                 data=csv_data,
                 file_name="ames_housing_predictions.csv",
                 mime="text/csv",
-                width='stretch'
+                use_container_width=True
             )
         
     except Exception as e:
