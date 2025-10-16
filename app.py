@@ -221,6 +221,32 @@ st.markdown("""
     .dark-instruction-box strong {
         color: #ffffff !important;
     }
+
+    /* Dark theme for expanders */
+    .streamlit-expanderHeader {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+        color: #e2e8f0 !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        padding: 0.75rem 1rem !important;
+        border: none !important;
+    }
+
+    /* Expander content area */
+    .streamlit-expanderContent {
+        background-color: #0f172a !important; /* Deep dark navy */
+        color: #e2e8f0 !important;
+        border-radius: 0 0 8px 8px !important;
+        padding: 1rem !important;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4) !important;
+    }
+
+    /* Table background inside expanders */
+    .stDataFrame {
+        background-color: #1e293b !important;
+        border-radius: 6px !important;
+    }
+        
     </style>
 """, unsafe_allow_html=True)
 
