@@ -308,7 +308,7 @@ if st.session_state.get("show_reset_spinner", False):
     with st.spinner("🔄 Resetting inputs..."):
         time.sleep(0.8)
     st.session_state["show_reset_spinner"] = False
-    st.rerun()
+    st.experimental_rerun()
 
 
 # Prediction Logic
