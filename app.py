@@ -392,19 +392,19 @@ if st.session_state.last_inputs:
     df_display.columns= ["Value"]
     df_display.index.name= "Feature"
     df_display= df_display.reset_index()
-    df_display.rename(columns={
-            "OverallQual": "Overall Quality",
-            "GrLivArea": "Living Area (sqft)",
-            "GarageCars": "Garage Capacity",
-            "1stFlrSF": "First Floor Area (sqft)",
-            "YearBuilt": "Year Built",
-            "ExterQual": "Exterior Quality",
-            "TotalBsmtSF": "Basement Area (sqft)",
-            "KitchenQual": "Kitchen Quality",
-            "GarageArea": "Garage Area (sqft)",
-            "FullBath": "Full Bathrooms"
-
-        }, inplace=True)
+    df_display["Feature"] = df_display["Feature"].replace({
+        "OverallQual": "Overall Quality",
+        "GrLivArea": "Living Area (sqft)",
+        "GarageCars": "Garage Capacity",
+        "1stFlrSF": "First Floor Area (sqft)",
+        "YearBuilt": "Year Built",
+        "ExterQual": "Exterior Quality",
+        "TotalBsmtSF": "Basement Area (sqft)",
+        "KitchenQual": "Kitchen Quality",
+        "GarageArea": "Garage Area (sqft)",
+        "FullBath": "Full Bathrooms"
+        
+    })
     
     with st.expander("📋 View Input Details", expanded=False):
         st.dataframe(df_display, use_container_width=True, hide_index=True)
